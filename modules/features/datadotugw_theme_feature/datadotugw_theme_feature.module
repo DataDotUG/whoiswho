@@ -1,7 +1,0 @@
-<?php
-/**
- * @file
- * Code for the DataUg Theme  Feature feature.
- */
-
-include_once 'datadotugw_theme_feature.features.inc';

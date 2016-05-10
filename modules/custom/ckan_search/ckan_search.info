@@ -1,5 +1,0 @@
-name = CKAN Search
-description = Creates a block that posts a search to a CKAN instance.
-package = CKAN
-core = 7.x
-dependencies[] = block
