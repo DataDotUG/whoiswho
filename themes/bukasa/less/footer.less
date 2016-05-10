@@ -1,0 +1,97 @@
+// Insert your styling here.
+.footer{
+    background-color: @brand-primary;
+    border-top: medium none;
+    margin-top: 0;
+    .well{
+          background-color: transparent;
+          .block {
+              width: 25%;
+              display: inline-flex;
+              ul.nav{
+                 a:hover {
+                 background-color: transparent;
+                 }
+              }
+          }
+          #block-system-powered-by.block {
+              width: 100%;
+              color: @brand-subtle;
+              display: block;
+              text-align: center;
+          }
+    }
+    h2, .h2 {
+         background-color: darken(@brand-primary, 4.5%);
+         border-radius: 3px;
+         color: @brand-subtle;
+         font-size: 20px;
+         text-transform: capitalize;
+         margin: 0px 10px 20px 0px; 
+         padding: 10px;
+    }
+    form{
+         input{
+            color: @brand-primary;
+            border-radius: 3px;
+            border: 3px solid @brand-success;
+            padding: 6px;
+         }
+         .input-submit{
+            color: @brand-subtle;
+            background-color: @brand-success;
+            margin-left: 5px;
+         }
+         .gg-subscribe-form{
+            margin: 0 10px;
+            img{
+               display: none;
+            }
+            p{
+              display: inline-block;
+            }
+            p:last-child{
+              display: block;
+            }
+         }
+    }
+}
+.region-footer{
+    color: #FFFFFF;
+    .block{
+       float: left;
+       width: 33.3333%;
+    }
+    li{
+    & > a:hover, a:focus, a:visited{
+       background-color: transparent;
+       color: lighten(@brand-success, 35%);
+    }
+    & > a{
+      display: inline-block;
+    }
+    input{
+            background: @btn-default-bg;
+         }
+    }
+    .block-menu{
+     h2{
+       display: none;
+     }
+    }
+}
+//push footer below
+html, body {
+     height: 100%;
+}
+#wrap {
+     min-height: 100%;
+     height: auto !important;
+     height: 100%;
+     margin: 0 auto -60px;
+}
+#push, #footer{
+     height: 60px;
+}
+//footer container
+

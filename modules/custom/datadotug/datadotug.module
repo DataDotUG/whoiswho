@@ -1,0 +1,28 @@
+<?php
+/**
+ * @file
+ * The DatadotUG module has some small tweaks especially for data.ug
+ */
+
+/**
+ * Implements hook_menu().
+ */
+function datadotug_menu() {
+  $items = array();
+
+  $items['datadotug/css'] = array(
+    'page callback' => 'datadotug_css',
+    'access callback' => TRUE,
+    'weight' => 1,
+  );
+  return $items;
+}
+
+/**
+ * This function returns all the css in a page
+ * CKAN & Geonode use this to embed the standard styling
+ */
+function datadotug_css() {
+  print drupal_get_css();
+  exit();
+}

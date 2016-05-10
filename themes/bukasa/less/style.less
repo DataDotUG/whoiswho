@@ -1,0 +1,803 @@
+// Bootstrap library.
+@import 'bootstrap.less';
+
+// Base-theme overrides.
+@import 'overrides.less';
+
+// Theme specific.
+@import 'header.less';
+@import 'content.less';
+@import 'footer.less';
+
+@import 'variables.less';
+@import 'bootswatch.less';
+
+/*
+  Custom styles starts here
+*/
+//## Brand colors for Data.ug
+
+@quad1: #07a4a4;  // green
+@quad2: #062d84;  // blue
+@quad3: #e0e0e0;  // grey
+@quad4: #ff7300;  // orange
+
+
+@brand-primary:         #240F0B;
+@brand-success:         #1FA5A4;
+@brand-info:            #25397F;
+@brand-subtle:          #F2F2F2; 
+
+@brand-warning:         #F39C12;
+@brand-danger:          #E74C3C; 
+@brand-success:  @quad2;
+
+@navbar-default-link-active-bg:     darken(@brand-primary, 6.5%);
+@btn-default-bg:       darken(@brand-success, 6.5%);
+//** Text color for `newshighlight'
+@brand-newshighlight-text: #FFFFFF;
+//** Text color for `<input>`boxes
+@input-color:                    #000000;
+//** `<input>` border color
+@input-border:                   @brand-success;
+@input-background-color:          #eeffff;
+
+//** Border color for inputs on focus
+@input-border-focus:            darken(@brand-success, 6.5%);
+@input-background-color-focus:  #ffffff;
+
+@btn-margin-top:                10px;
+@navbar-active-trail:           @brand-success;
+
+@link-hover-color: @quad4;
+
+html {
+    body {
+        font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+        background: url("../images/bg.png") repeat scroll 0 0 transparent;
+        .navbar{
+           box-shadow: 0 4px 2px -4px #FFFFFF;
+           margin-bottom: 0;
+        }
+        .main-container .row {
+            background-color: #fff;
+        }
+        #push {
+            height: 100px;
+        }
+    }
+}
+
+html h2 {
+    font-size: 1.5em;
+}
+
+.region-navigation {
+    .block-ckan-search {
+       float: right;
+       clear: right;
+    }
+}
+.panels-flexible-region-new-center{
+    width: 100%;
+}
+input.error{ 
+    color: @brand-primary;
+}
+div.error label, table tr.error label{
+    padding-left: 10px;
+}
+.jumbotron {
+    background: transparent;
+    font-family: "Century Gothic","Apple Gothic",AppleGothic,"URW Gothic L","Avant Garde",Futura,sans-serif; 
+    text-align: center;
+    color: @brand-newshighlight-text;
+    padding-left: 100px;
+    padding-left: 100px;
+    h2 {
+       color: #FFF;
+       font-size: 50px;
+       text-shadow: 3px 1px 0 rgba(0, 0, 0, 0.6);
+    }
+}
+.header-highlight{
+    .jumbotron {
+       background: @brand-success;
+    }    
+}
+// search block on home
+.region-content {
+    .block-ckan-search {
+        margin: 0 auto;
+        padding: 6px 15px;
+        .block-title {
+            padding-left: 15%;
+        }
+        form {
+          margin: auto;
+          width: 70%;
+        }
+        h2 {
+            color: @brand-success;
+        }
+        input:focus{
+            box-shadow: 1px 1px 3px lighten(@brand-subtle, 5%) inset;
+        }
+    }
+}
+.newshighlight {
+    background-color: @brand-subtle;
+    border-radius: 6px;   
+    font-size: 16px;
+    padding: 10px 20px 20px;
+    text-align: justify;
+    margin-bottom:10px;
+    a:hover {
+        color: @brand-primary;
+    }
+    .submitted{
+        font-size: small;
+    }
+}
+.region-content{
+    img{
+        //  float: left;
+         // border-radius: 10px;
+         // margin-right: 15px;
+         // background-color: #f2f2f2;
+    }
+}
+h1.page-header{
+    text-transform: capitalize;
+}
+.node-type-blog{
+    h1.page-header{
+       text-transform: initial;
+    }
+}
+.front{
+    h1.page-header{
+         display:none;
+    } 
+    .main-container{
+      margin-top: -1px;
+    }
+}
+.field-name-field-tags{
+    margin-top: 10px;
+    .field-item {
+         margin-top: 3px;
+         margin-right: 6px;
+         padding: 1px 10px;
+         display: inline;
+         background-color: darken(@quad3, 6.5%);
+         border-radius: 4px;
+         & > a {
+           color: darken(@quad4, 6.5%);
+         }
+    }
+}
+.pane-content {
+    ul.list-inline {
+        & > li {
+            margin-left: 50px;
+            margin-top: 20px;
+        }
+    }
+}
+.view{
+   table {
+        width: 100%;
+   }
+}
+//creating a margin bottom on the users profile picture
+.view-users.view-id-users {
+    table {
+        background: rgba(0, 0, 0, 0.063);
+        td{
+          padding: 10px;
+          border: 1px solid #fff;
+          text-align: left;
+        }
+    }
+}
+//resizing the exposed filters, reposition the pager
+.view-users {
+    .views-exposed-form {
+        .views-exposed-widget {
+            width: 33%;
+        }
+    }
+    td.col-first{ //ths is for the users page
+        margin: 0;
+    }
+    td {
+        .views-label{
+           float: left;
+           padding-right: 2px;
+        }
+        h2 {
+           font-size: 16px;
+           display: inline;
+        }
+        .taxonomy-term-description{
+           font-size: smaller;
+           font-style: italic;
+           margin-bottom: 10px;
+           color: darken(@brand-subtle, 45%);
+        }// ends here
+    }
+    .pagination {
+        float: right;
+        margin: 21px 0px;
+    }
+}
+.view-profile {
+    td {
+       border-bottom: 10px solid #FFFFFF;
+       border-right: 10px solid #FFFFFF;
+       background-color: @brand-subtle;
+       height: 250px;
+       max-width: 200px;
+       vertical-align: top;
+       .entity{
+          text-align: center;
+          padding: 10px;
+          .field-name-field-taxonomy{
+                 background-color: #F7F7F7;
+                 border-radius: 50%;
+                 margin: auto;
+                 width: 30px;
+                 height: 30px;
+                 .field-items{
+                   position: absolute;
+                 }
+          }
+          h2{
+            font-size: 16px;
+            display: inline;
+            margin: 0;
+          }
+         .field-name-field-full-name{
+            font-weight: bold;
+            display: inline-block;
+            border-bottom: 1px solid darken(@brand-subtle, 25%);
+            padding: 0px 20px;
+            margin: 10px 0;
+            text-transform: capitalize;
+         }
+         .field-name-field-organisation{
+            .field-label{
+               font-weight: normal;
+               font-size: 0.7em;
+               letter-spacing: 0.09em;
+            }
+         }
+         .taxonomy-term-description{
+            font-size: smaller;
+            font-style: italic;
+            color: darken(@brand-subtle, 45%);
+         }
+         .field-name-field-profile-picture{
+            img{
+              border-radius: 50%;
+            }
+         }
+       }
+       .field-name-field-company{
+           margin: 10px 0;
+           .field-label{
+              font-weight: normal;
+              font-size: 12px;
+           }
+           .field-item{
+              font-weight: bold;
+           }
+       }
+    }
+}
+.page-profile-main {
+    .image-widget-data{
+          input.form-control.form-file{
+                padding: 0;
+                margin-bottom: 10px;
+          }
+    }
+}
+.node-blog.node-teaser, .node-article.node-teaser  {
+    border-radius: 6px;
+    box-shadow: 1px 1px 2px 1px @brand-subtle;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+}
+.taxonomy-term{
+    display: block;
+    float: left;
+ }
+#taxonomy-term-4 {//Gives feedback 
+    h2{
+       a {
+       color: @brand-warning;
+       }
+    }
+}
+#taxonomy-term-1 {//Has data
+    h2{
+       a {
+         color: @brand-success;
+       }
+    }
+}
+
+#taxonomy-term-2 {//Uses data
+    h2{
+       a {
+       color: @brand-primary; 
+       }
+    }
+}
+#taxonomy-term-3 {//publishes data
+    h2{
+       a {
+       color: @brand-info;
+       }
+    }
+}
+// profile page filter
+.jhjhform{//form
+    position: relative;
+    .views-exposed-form{ 
+         border-bottom: 1px solid @brand-subtle;
+         border-top: 1px solid @brand-subtle;
+         margin-bottom: 1em;
+         .views-exposed-widget{
+             float: right;
+             label{
+               float: left;
+               font-size: 80%;
+               font-weight: bold;
+               margin-top: 0.65em;
+               text-transform: uppercase;
+             }
+             label:after{
+               content:" - ";
+             }
+             .views-widget{
+               float: left;
+             }
+         }
+         .views-submit-button{
+             display: none;
+         }
+         .form-type-bef-link.form-item {
+             display: inline-block;
+             margin: 2px 4px;
+             a{
+                background-color: @brand-subtle;
+                padding: 3px 8px;
+                border-radius: 8px;
+                text-transform: uppercase;
+                color: @brand-primary;
+                font-size: 13px;
+                text-decoration: none;
+             }
+             a:hover{
+                background-color: #FFFFFF;
+                text-decoration: none;
+             } 
+         }
+         #edit-field-taxonomy-tid-all{
+             a{
+                border: 3px solid  darken(@brand-subtle, 10%);
+             }
+             a:focus{
+                box-shadow: 2px 2px 0 darken(@brand-subtle, 20%);
+             }
+         }
+         #edit-field-taxonomy-tid-20{//Gives feedback
+             a{
+                border: 3px solid @brand-warning;
+             }
+             a:focus{
+                box-shadow: 2px 2px 0 darken(@brand-subtle, 20%);
+             }
+         }
+         #edit-field-taxonomy-tid-21{//Has data
+             a{
+                border: 3px solid @brand-success;
+             }
+             a:focus{
+                box-shadow: 2px 2px 0 darken(@brand-subtle, 20%);
+             }
+         }
+         #edit-field-taxonomy-tid-22{//Uses data 
+             a{
+                border: 3px solid @brand-primary;
+             }
+             a:focus{
+                box-shadow: 2px 2px 0 darken(@brand-subtle, 30%);
+             }
+         }
+         #edit-field-taxonomy-tid-23{//Publishes data  
+             a{
+                border: 3px solid @brand-info;
+             }
+             a:focus{
+                box-shadow: 2px 2px 0 darken(@brand-subtle, 45%);
+             }
+         }
+         .form-type-bef-link{//this is backup general theme on all filters  
+             a{
+                border: 3px solid @brand-primary;
+             }
+         }
+    }
+}
+form {
+   .selected{
+     background-color: #FFF;
+     padding: 3px 0px;
+     border-radius: 8px;
+   }
+}
+.not-front
+    .main-container{
+      .container{
+          margin-top: 2em;
+      }
+}
+div.view-blog-posts {
+    .views-field-title {
+        a {
+            font-size: 32px;
+        }
+    }
+    img {
+        float: left;
+        margin-right: 12px;
+        border-radius: 5px;
+    }
+}
+.node-blog {
+    img {
+        float: left;
+        margin-right: 12px;
+        border-radius: 5px;
+    }
+    h2 {
+        margin-top: 5px;
+    }
+}
+h2.block-title, .views-field-title{
+        font-size: 24px;
+}
+
+.region-content {
+    .form-text {
+      background-color: @input-background-color;
+    }
+    .form-text:focus {
+      background-color: @input-background-color-focus;
+    }
+}
+/* Graphing things */
+
+/* Count Terms on Frontpage */
+
+
+.view-id-frontpage_per_quadrant .tickLabels .xAxis .tickLabel {
+    .tickLabels();
+}
+
+.front .panel-col-top {
+  background-color: @quad3;
+  h2 {
+    text-align: center;
+    font-size: 2em;
+    color: @quad1;
+    padding-top: 23px;
+  }
+  .field-name-body {
+    padding: 20px;
+    color: #240f0b;
+    img {
+      float:right;
+    }
+    p {
+      font-size: 1.6em;
+      line-height: 1.8em;
+    }
+  }
+}
+
+.front  .panel-bootstrap-pane {
+  margin-top: 68px;
+
+  .pane-views {
+    font-size: 30px;
+    .btn {
+        float: right;
+        margin-right: 50px;
+        width: 100px;
+        &.Organisations.share {
+            display: none;
+        }
+        &.Organisations.build {
+            display: none;
+        }
+        &.Datasets.partner {
+            display: none;
+        }
+        &.Datasets.build {
+            display: none;
+        }
+        &.Apps.share {
+            display: none;
+        }
+        &.Apps.partner {
+            display: none;
+        }
+
+    }
+    .views-row {
+        margin-top: 45px;
+    }
+  }
+}
+
+
+.pane-news-blog-pages-and-blocks {
+    .well-heading {
+        font-weight: bolder;
+        font-size: 2em;
+    }
+    
+    margin: 10px;
+    
+    .views-row {
+        padding: 10px;
+       
+      .links {
+        float: right;
+        display: block;
+o        li {
+            .button-variant(@quad1, @quad3, @quad2);
+        }
+      }
+    }
+    .views-row-even .node {
+      background-color: #fff;
+    }
+    
+    .views-row-odd .node {
+      background-color: @quad3;        
+    }
+
+}
+
+/**
+  *    Organisation page
+  */
+
+.node-organisation {
+    &.ds-2col-stacked-fluid {
+        .group-header {
+        display: inline-block;
+        clear: both;
+        width: 100%;
+        }
+        .group-left {
+            
+        }
+    }
+}
+
+// hide the feed box for users
+.node-organisaton-form {
+    #edit-feeds {
+        display: none;
+        margin-right: 20px;
+        margin-bottom: 20px;
+    }
+    .panel-heading {
+      &>a[href="#edit-feeds-imagegrabber"] {
+        display: none;
+      }
+      &>#edit-feeds-imagegrabber {
+        display: none;
+      }
+      &>fieldset-legend {
+          display: none;
+      }
+    }
+}
+
+
+// 
+
+.field-name-ds-user-picture {
+    margin-right: 20px;
+}
+.field-name-field-bio {
+    
+}
+
+
+
+
+// show for admins
+.admin-menu {
+  .node-organisaton-form {
+    #edit-feeds {
+        display: inherit;
+    }
+    #edit-feeds-imagegrabber {
+        display: inherit;
+    }
+  }
+}
+
+/**
+  *    User Profile page
+  */
+
+.user-profile {
+    &.ds-2col-stacked-fluid {
+        .group-header {
+          display: inline-block;
+          clear: both;
+          width: 100%;
+          .field-name-ds-user-picture {
+              float: left;
+          }
+        }
+        .group-left {
+            
+        }
+    }
+}
+
+
+/* 
+ *
+ *    And here the magic: mixins!
+ * 
+ */
+
+.field-name-field-logo {
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    
+}
+
+.field-name-field-term-quadrants {
+   .quadrantcontainer(100px);
+   float: right;
+   margin-left: 20px;
+   margin-bottom: 20px;
+}
+
+
+.quadrantcontainer(@size:100px) {
+    
+  height: (@size * 2);
+  width:  (@size * 2);
+  position: relative;
+  display: block;
+
+  .quadrant {
+    line-height: (@size);
+    padding-left: (@size * .25);
+    font-weight: strong;
+  
+    &.quarter-circle-top-right {
+      .quarter-circle-top-right(@size);
+    }
+
+    &.quarter-circle-bottom-right {
+      .quarter-circle-bottom-right(@size);
+    }
+
+    &.quarter-circle-bottom-left {
+      .quarter-circle-bottom-left(@size);
+    }
+
+    &.quarter-circle-top-left {
+      .quarter-circle-top-left(@size);
+    }
+  }
+}
+
+.quarter-circle-top-right(@size:100px) {
+     width: @size;
+     height: @size;
+     background: @quad1;
+     border-radius: 0 @size 0 0;
+     -moz-border-radius: 0 @size 0 0;
+     -webkit-border-radius: 0 @size 0 0;
+     position: absolute;
+     top: 0px;
+     right: 0px;
+     a {
+       color: @quad2;
+     }
+}
+
+.quarter-circle-bottom-right(@size:100px){
+     width: @size;
+     height: @size;
+     background: @quad2;
+     border-radius: 0 0 @size 0;
+    -moz-border-radius: 0 0 @size 0;
+    -webkit-border-radius: 0 0 @size 0;
+     position: absolute;
+     bottom: 0px;
+     right: 0px;
+     a {
+       color: #fff;
+     }
+}
+
+.quarter-circle-bottom-left(@size:100px) {
+     width: @size;
+     height: @size;
+     background: @quad3;
+     border-radius: 0 0 0 @size;
+     -moz-border-radius: 0 0 0 @size;
+     -webkit-border-radius: 0 0 0 @size;
+     position: absolute;
+     bottom: 0px;
+     left: 0px;
+     a {
+       color: @quad2;
+     }
+}
+
+.quarter-circle-top-left(@size:100px) {
+    width: @size;
+    height: @size;
+    background: @quad4;
+     border-radius: @size 0 0 0;
+     -moz-border-radius: @size 0 0 0;
+     -webkit-border-radius: @size 0 0 0;
+     position: absolute;
+     top: 0px;
+     left: 0px;
+     a {
+       color: #fff;
+     }
+}
+
+
+.tickLabels() {
+    background-repeat: no-repeat;
+    background-position: 10px;
+    &:nth-child(1) {
+      background-image: url("../images/quad1.png");
+    }
+    &:nth-child(2) {
+      background-image: url("../images/quad2.png");
+    }
+    &:nth-child(3) {
+      background-image: url("../images/quad3.png");
+    }
+    &:nth-child(4) {
+      background-image: url("../images/quad4.png");
+    }
+    
+}
+
+
+//.....media query for the profile page....../
+    @media screen (@screen-xs) { 
+       div.view.view-profile.view-id-profile.view-display-id-page {
+         table {
+            td {
+              clear: both;
+              display: block;
+            } 
+         }
+       }
+   }
+//------------------------

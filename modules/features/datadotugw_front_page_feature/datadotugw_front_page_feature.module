@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DataUg Main  Feature feature.
+ */
+
+include_once 'datadotugw_front_page_feature.features.inc';

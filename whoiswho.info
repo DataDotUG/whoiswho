@@ -1,0 +1,16 @@
+name = Who Is Who
+description = An install profile for a Who is Who
+version = VERSION
+core = 7.x
+hidden = FALSE
+dependencies[] = block
+dependencies[] = taxonomy
+dependencies[] = contact
+dependencies[] = views
+dependencies[] = libraries
+dependencies[] = module_filter
+dependencies[] = context
+dependencies[] = features
+dependencies[] = entity
+dependencies[] = strongarm
+dependencies[] = globalredirect

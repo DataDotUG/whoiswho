@@ -1,0 +1,7 @@
+<?php
+/**
+ * @file
+ * Code for the DatadotUG CKAN Nodetypes feature.
+ */
+
+include_once 'datadotug_ckan_nodetypes.features.inc';
